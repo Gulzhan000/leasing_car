@@ -10,7 +10,7 @@ import LeaseApplication from './pages/LeaseApplication';
 import MyLeasings from './pages/MyLeasings';
 import AdminPanel from './pages/AdminPanel';
 
-
+// Action creator
 const fetchCars = (cars) => ({
   type: 'FETCH_CARS',
   payload: cars

@@ -17,7 +17,7 @@ const CarDetails = () => {
       setCar(foundCar);
       setLoading(false);
     } else {
-      //если нет в store загружаем из API
+      // Если нет в store, загружаем из API
       api.getCarById(id).then(data => {
         setCar(data);
         setLoading(false);

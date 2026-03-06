@@ -11,9 +11,11 @@
 .my-leasings-page h1 {
   font-size: 3rem;
   color: var(--primary-black);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .admin-panel-page h1::after,
@@ -21,113 +23,179 @@
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 0;
-  width: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
   height: 3px;
   background: var(--gold-primary);
 }
-
-.admin-panel-page h2 {
-  font-size: 1.8rem;
-  color: var(--gold-dark);
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-
-.leases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+.leases-container {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.lease-card {
+/* Админ */
+.admin-lease-card {
   background: var(--white);
+  border: 1px solid var(--gold-primary);
   border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  border: 1px solid var(--gray-light);
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.lease-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--gold-primary);
+.admin-lease-content {
+  flex: 1;
 }
 
-.lease-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--gold-primary);
-}
-
-.lease-card h3 {
-  font-family: var(--font-primary);
-  font-size: 1.5rem;
+.admin-car-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
   color: var(--primary-black);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 1.5rem;
 }
 
-.lease-card p {
-  margin: 0.5rem 0;
+.admin-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.admin-details-grid p {
+  margin: 0.3rem 0;
   color: var(--gray-dark);
-  font-size: 0.95rem;
 }
 
-.lease-card p strong {
+.admin-details-grid p strong {
   color: var(--primary-black);
-  font-weight: 600;
-  min-width: 80px;
+  min-width: 130px;
   display: inline-block;
 }
 
-.lease-card select {
+/* Мои оформления */
+.user-lease-card {
+  background: var(--white);
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
-  padding: 0.8rem;
-  margin-top: 1rem;
-  border: 2px solid var(--gray-light);
+}
+
+.user-lease-content {
+  flex: 1;
+}
+
+.user-car-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--primary-black);
+  margin-bottom: 1.5rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.user-details p {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.user-details p strong {
+  color: var(--primary-black);
+  min-width: 100px;
+  display: inline-block;
+}
+
+/* СТИЛИ ДЛЯ БЛОКА СТАТУСА В МОИХ ОФОРМЛЕНИЯХ */
+.user-status-block {
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.user-status-block .status-label {
+  margin: 0;
+  color: var(--primary-black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.user-status-block .status-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;  
+  border-radius: 20px;      
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;        
+  text-align: center;
+  letter-spacing: 0.5px;  
+  margin: 0 auto;
+}
+
+/* СТИЛИ ДЛЯ БЛОКА СТАТУСА В АДМИНКЕ */
+.admin-status-block {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.admin-status-block .status-label {
+  margin: 0;
+  color: var(--primary-black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.status-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.status-select {
+  width: 200px;
+  padding: 0.7rem;
+  border: 2px solid var(--gold-primary);
   border-radius: var(--radius-sm);
   font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition);
   background: var(--white);
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.lease-card select:hover,
-.lease-card select:focus {
-  border-color: var(--gold-primary);
+.status-select:hover,
+.status-select:focus {
+  border-color: var(--gold-dark);
   outline: none;
-}
-
-.lease-card select option[value="на рассмотрении"] {
-  color: var(--status-pending);
-}
-
-.lease-card select option[value="одобрено"] {
-  color: var(--status-approved);
-}
-
-.lease-card select option[value="отказано"] {
-  color: var(--status-rejected);
-}
-
-.lease-card label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-  color: var(--gold-dark);
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
 }
 
 .empty-state {
@@ -160,14 +228,69 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold);
 }
+.admin-details-grid p strong {
+  color: var(--primary-black);
+  display: inline; 
+  min-width: 0;  
+  margin-right: 5px; 
+}
 
-@media (max-width: 768px) {
-  .leases-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .admin-panel-page h1,
-  .my-leasings-page h1 {
-    font-size: 2.5rem;
-  }
+
+.admin-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem 2rem; 
+}
+
+.admin-details-grid p,
+.user-details p {
+  margin: 0;
+  color: var(--gray-dark);
+  line-height: 1.2; 
+}
+
+.admin-details-grid p strong,
+.user-details p strong {
+  color: var(--primary-black);
+  font-weight: 600;
+  display: inline;
+}
+.admin-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem 2rem; 
+}
+
+.admin-details-grid p,
+.user-details p {
+  margin: 0;
+  color: var(--gray-dark);
+  line-height: 2; 
+}
+
+.admin-details-grid p strong,
+.user-details p strong {
+  color: var(--primary-black);
+  font-weight: 600;
+  display: inline;
+}
+
+
+.delete-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.delete-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
 }

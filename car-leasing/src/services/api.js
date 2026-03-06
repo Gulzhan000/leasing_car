@@ -39,19 +39,6 @@ const api = {
     );
     localStorage.setItem('leases', JSON.stringify(updatedLeases));
     return Promise.resolve({ leaseId, status });
-  },
-
-  // НОВЫЙ МЕТОД: удаление заявки
-  deleteLease: (leaseId) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const leases = JSON.parse(localStorage.getItem('leases') || '[]');
-        const updatedLeases = leases.filter(lease => lease.id !== leaseId);
-        localStorage.setItem('leases', JSON.stringify(updatedLeases));
-        console.log(`Заявка с ID ${leaseId} удалена`);
-        resolve({ success: true, id: leaseId });
-      }, 300); // Небольшая задержка для имитации реального API
-    });
   }
 };
 

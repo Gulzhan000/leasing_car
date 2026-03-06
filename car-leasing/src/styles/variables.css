@@ -1,0 +1,36 @@
+:root {
+  /* Цветовая гамма Premium */
+  --primary-black: #0a0a0a;
+  --secondary-black: #1a1a1a;
+  --gold-primary: #c5a572;
+  --gold-light: #e5d5b5;
+  --gold-dark: #8b7355;
+  --white: #ffffff;
+  --white-off: #f8f8f8;
+  --gray-light: #e0e0e0;
+  --gray: #999999;
+  --gray-dark: #4a4a4a;
+  
+  /* Статусы */
+  --status-pending: #f39c12;
+  --status-approved: #27ae60;
+  --status-rejected: #e74c3c;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow-gold: 0 5px 20px rgba(197, 165, 114, 0.2);
+  
+  /* Шрифты */
+  --font-primary: 'Cormorant Garamond', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  
+  /* Радиусы */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Транзиции */
+  --transition: all 0.3s ease;
+}
