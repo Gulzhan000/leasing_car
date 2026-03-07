@@ -54,7 +54,7 @@ const AdminPanel = () => {
                     <span>{lease.term || 12} месяцев</span>
                   </p>
                   <p>
-                    <strong>Дата:</strong>
+                    <strong>Дата оформления:</strong>
                     <span>{formatDate(lease.date)}</span>
                   </p>
                   <p>
@@ -106,7 +106,7 @@ const AdminPanel = () => {
                     className="delete-button"
                     onClick={() => handleDeleteLease(lease.id)}
                   >
-                    Удалить заявку
+                    Удалить
                   </button>
                 </div>
               </div>
